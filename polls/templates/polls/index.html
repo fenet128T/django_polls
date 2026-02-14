@@ -3,19 +3,23 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fenet' Polls</title>
     <link rel="stylesheet" href="{% static 'polls/style.css' %}">
   </head>
   <body>
-    <h1>Polls Index</h1>
+   <div class="container">
+    <h1>Active Polls</h1>
+
     {% if latest_question_list %}
-    <ul>
-    {% for question in latest_question_list %}
-        <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No polls are available.</p>
-{% endif %}
+        <ul>
+        {% for question in latest_question_list %}
+            <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p style="color: white;">No polls are available right now.</p>
+    {% endif %}
+</div>
   </body>
 </html>

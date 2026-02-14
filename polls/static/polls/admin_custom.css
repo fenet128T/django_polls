@@ -1,0 +1,45 @@
+/* Custom Admin Styling */
+
+/* Background for the whole page */
+html, body {
+    min-height: 100vh; 
+    margin: 0;
+}
+body {
+    /* background: url("images/background.png"); */
+    background-size: cover;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Change the Top Header Bar */
+#header {
+    background: #2c3e50 !important; /* Dark blue-grey */
+    color: #f1c40f !important;    /* Gold text */
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+#branding h1 a {
+    color: #f1c40f !important;
+}
+
+/* Make the main content area look like a floating card */
+#content {
+    background: rgba(255, 255, 255, 0.9) !important;
+    margin: 20px auto;
+    border-radius: 15px;
+    padding: 30px !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+/* Change button colors */
+.button, input[type=submit] {
+    background: #27ae60 !important; /* Green */
+    border-radius: 8px !important;
+    border: none !important;
+}
+
+.button:hover, input[type=submit]:hover {
+    background: #2ecc71 !important;
+}

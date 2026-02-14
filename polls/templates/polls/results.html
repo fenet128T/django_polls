@@ -1,18 +1,29 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
-    <title>results</title>
-  </head>
-  <body>
-<h1>{{ question.question_text }}</h1>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <link rel="stylesheet" href="{% static 'polls/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>{{ question.question_text }}</h1>
 
-<ul>
-{% for choice in question.choice_set.all %}
-    <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
-{% endfor %}
-</ul>
+        <ul class="results-list">
+        {% for choice in question.choice_set.all %}
+            <li>
+                <strong>{{ choice.choice_text }}</strong> 
+                <span class="badge">{{ choice.votes }} vote{{ choice.votes|pluralize }}</span>
+            </li>
+        {% endfor %}
+        </ul>
 
-<a href="{% url 'polls:detail' question.id %}">Vote again?</a>    
-  </body>
+        <div class="nav-links">
+            <a href="{% url 'polls:detail' question.id %}" class="btn-small">Vote again?</a>
+            <a href="{% url 'polls:index' %}" class="btn-small">Back to List</a>
+        </div>
+    </div>
+</body>
 </html>

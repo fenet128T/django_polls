@@ -1,6 +1,153 @@
-li a {
-    color: green;
+
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Poppins', sans-serif; /* A modern font */
 }
+
 body {
-    background: white url("images/background.jpg") no-repeat;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.15) url("images/background.png");
+    background-size: cover;
+    backdrop-filter: blur(1200px);          
+    padding: 60px;
+    border-radius: 20px;
+    border: 1px solid rgba(236, 231, 231, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(53, 50, 50, 0.37);
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+}
+
+h1 {
+    color: rgb(92, 82, 82);
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+ul {
+    list-style: none;
+    padding: 10px;
+}
+
+li {
+    margin: 15px 0;
+}
+
+li a {
+    text-decoration: none;
+    color:  rgb(92, 82, 82);
+    background: rgba(0, 0, 0, 0.1);
+    display: block;
+    padding: 15px;
+    border-radius: 10px;
+    transition: 0.3s;
+    border: 1px solid transparent;
+}
+
+li a:hover {
+    background: rgba(34, 63, 59, 0.3);
+    border: 1px solid rgb(235, 230, 230);
+    transform: translateY(-3px);
+}
+/* Container for the voting form */
+.paper-form {
+    background: #fdfcf0; /* Paper color */
+    padding: 40px;
+    width: 90%;
+    max-width: 500px;
+    margin: 50px auto;
+    box-shadow: 10px 10px 20px rgba(0,0,0,0.3);
+    
+    /* Safer torn edge effect */
+    clip-path: polygon(
+        0% 0%, 100% 1%, 98% 50%, 100% 99%, 50% 97%, 0% 100%, 2% 50%
+    );
+    border: 1px solid #e0e0e0;
+}
+
+/* Style the question title */
+.paper-form h1 {
+    font-family: 'Courier New', Courier, monospace;
+    color: #333;
+    border-bottom: 2px solid #3498db; /* Blue 'underline' look */
+    padding-bottom: 10px;
+}
+
+/* Style the choice labels */
+.paper-form fieldset {
+    border: none;
+    padding: 0;
+}
+
+.paper-form label {
+    display: block;
+    font-family: 'Comic Sans MS', cursive; /* Handwritten feel */
+    font-size: 1.2rem;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+.choice-row {
+    margin: 15px 0;
+    text-align: left;
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Handwritten feel */
+}
+/* The Vote Button */
+.vote-btn {
+    background: #3498db;
+    color: white;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    margin-top: 20px;
+}
+
+.vote-btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: none;
+    background: #2980b9;
+}
+
+/* Results list styling */
+/* Style for the results list inside the paper container */
+.results-list {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.results-list li {
+    padding: 10px;
+    border-bottom: 1px dashed #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Comic Sans MS', cursive;
+}
+
+.badge {
+    background: #e74c3c;
+    color: white;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+}
+
+.btn-small {
+    display: inline-block;
+    margin-top: 20px;
+    margin-right: 10px;
+    text-decoration: none;
+    color: #3498db;
+    font-weight: bold;
 }
